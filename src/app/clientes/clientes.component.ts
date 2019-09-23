@@ -11,7 +11,9 @@ clientes: Cliente[]
   constructor(private clienteService : ClienteService) { }
 
   ngOnInit() {
-    this.clientes = this.clienteService.getClientes();
+     this.clienteService.getClientes().subscribe(
+       clientes => this.clientes = clientes
+     );
   }
 
 }
