@@ -11,13 +11,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { FormComponent } from './clientes/form.component';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const routes: Routes= [
   {path: '',redirectTo: '/clientes', pathMatch: 'full'},
   {path: 'directivas',component: DirectivaComponent},
   {path: 'clientes',component: ClientesComponent},
-  {path: 'clientes/form', component: FormComponent}
+  {path: 'clientes/form', component: FormComponent},
+  {path: 'clientes/form/:id', component: FormComponent},
 ];
 
 @NgModule({
@@ -33,6 +35,7 @@ const routes: Routes= [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    FontAwesomeModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
