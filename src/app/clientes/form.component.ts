@@ -45,13 +45,5 @@ public update():void{
   )
 }
 
-public delete():void{
-    swal('Eliminar Cliente', `¿Está seguro que desea eliminar al cliente: ${this.cliente.nombre} ${this.cliente.apellido}?`, 'question')
-  this.clienteService.delete(this.cliente.id).subscribe(
-    response => {
-      swal('Eliminar Cliente', `Cliente ${this.cliente.nombre} ${this.cliente.apellido} eliminado con éxito.`, 'success')
-      this.router.navigate(['/clientes'])
-    }
-  )
-}
+
 }
